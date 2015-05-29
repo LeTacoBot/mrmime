@@ -1,5 +1,5 @@
 # Mr. Mime: An automatic pattern-based mime type generator.
-Usage: ```./mrmime.sh -n name -p pattern -c comment"```
+Usage: ```./mrmime.sh -n name -p pattern -c comment```
 
 Where:
 
