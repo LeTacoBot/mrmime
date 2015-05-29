@@ -49,17 +49,17 @@ fi
 
 echo "Writing information to temporary file..."
 
-echo '<?xml version="1.0"?>' > mrmime.xml
-echo '<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">' >> mrmime.xml
-echo "    <mime-type type=\"application/mrmine-${n}\">" >> mrmime.xml
-echo "        <comment>${c}</comment>" >> mrmime.xml
-echo "        <glob pattern=\"${p}\"/>" >> mrmime.xml
-echo "    </mime-type>"  >> mrmime.xml
-echo "</mime-info>" >> mrmime.xml
+echo '<?xml version="1.0"?>' > mrmime$-{n}.xml
+echo '<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">' >> mrmime$-{n}.xml
+echo "    <mime-type type=\"application/mrmine-${n}\">" >> mrmime$-{n}.xml
+echo "        <comment>${c}</comment>" >> mrmime$-{n}.xml
+echo "        <glob pattern=\"${p}\"/>" >> mrmime$-{n}.xml
+echo "    </mime-type>"  >> mrmime$-{n}.xml
+echo "</mime-info>" >> mrmime$-{n}.xml
 
 echo "Installing mime type to ~/.local/share/mime/application/mrmime-${n}.xml..."
 
-xdg-mime install --novendor mrmime.xml
-rm mrmime.xml
+xdg-mime install --novendor mrmime$-{n}.xml
+rm mrmime$-{n}.xml
 
 echo "Mime type installed to ~/.local/share/mime/application/mrmime-${n}.xml!"
